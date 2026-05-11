@@ -9,6 +9,7 @@ const navLinks = [
   { label: "功能", href: "#features" },
   { label: "案例", href: "#cases" },
   { label: "定价", href: "#pricing" },
+  { label: "博客", href: "/blog" },
 ];
 
 export function Nav() {
