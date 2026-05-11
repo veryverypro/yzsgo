@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { WechatCTA } from "./WechatCTA";
 
@@ -34,9 +35,14 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="flex h-80 w-full max-w-md items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 shadow-lg md:h-96">
-              <p className="text-gray-400">产品对话界面截图</p>
-            </div>
+            <Image
+              src="/images/product-screenshot.png"
+              alt="鸭嘴售 AI COO 产品界面"
+              width={600}
+              height={400}
+              className="w-full rounded-2xl shadow-lg"
+              priority
+            />
           </motion.div>
         </div>
       </div>
