@@ -30,7 +30,7 @@ function FloatingOrb({
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] overflow-hidden bg-gray-950 px-6 py-20 md:py-28">
+    <section className="relative overflow-hidden bg-gray-950 px-6 py-12 md:py-16">
       {/* Gradient mesh background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(6,182,212,0.15),transparent_50%)]" />
@@ -74,7 +74,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-1.5 text-sm text-brand-300"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-1.5 text-sm text-brand-300"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
@@ -91,7 +91,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-400 md:text-xl">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-gray-400 md:text-xl">
             从选品到上架，从达人建联到广告投放
             <br className="hidden sm:block" />
             告诉 AI 你想卖什么，剩下的交给鸭嘴售
@@ -102,7 +102,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+            className="mt-5 flex flex-wrap items-center justify-center gap-3"
           >
             <span className="text-xs text-gray-500">支持平台</span>
             {["Amazon", "TikTok Shop", "Temu", "SHEIN"].map((platform) => (
@@ -117,7 +117,7 @@ export function Hero() {
         </motion.div>
 
         {/* Bottom: Product screenshot + WeChat CTA side by side */}
-        <div className="mt-16 grid items-start gap-8 md:grid-cols-[1fr_auto]">
+        <div className="mt-10 grid items-start gap-6 md:grid-cols-[1fr_auto]">
           {/* Product screenshot with perspective */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
