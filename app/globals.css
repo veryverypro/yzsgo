@@ -68,6 +68,21 @@
   .blog-prose pre code {
     @apply bg-transparent text-gray-100 p-0;
   }
+  .blog-prose table {
+    @apply my-6 w-full border-collapse text-sm;
+  }
+  .blog-prose thead {
+    @apply border-b-2 border-gray-200;
+  }
+  .blog-prose th {
+    @apply py-3 px-4 text-left font-semibold text-gray-900 bg-gray-50;
+  }
+  .blog-prose td {
+    @apply py-3 px-4 text-gray-700 border-b border-gray-100;
+  }
+  .blog-prose tr:hover td {
+    @apply bg-gray-50;
+  }
   .blog-prose hr {
     @apply my-10 border-gray-200;
   }
