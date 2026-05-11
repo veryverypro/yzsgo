@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { QrModal, useQrModal } from "./QrModal";
 
 interface PricingTier {
   name: string;
@@ -64,6 +65,8 @@ const tiers: PricingTier[] = [
 ];
 
 export function Pricing() {
+  const qr = useQrModal();
+
   return (
     <section id="pricing" className="bg-gray-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
@@ -111,20 +114,22 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#footer-cta"
-                className={`mt-8 block rounded-full py-3 text-center text-sm font-medium transition-colors ${
+              <button
+                onClick={qr.show}
+                className={`mt-8 block w-full rounded-full py-3 text-center text-sm font-medium transition-colors ${
                   tier.highlighted
                     ? "bg-brand-500 text-white hover:bg-brand-600"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {tier.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <QrModal open={qr.open} onClose={qr.hide} />
     </section>
   );
 }

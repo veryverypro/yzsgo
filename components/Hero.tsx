@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { WechatCTA } from "./WechatCTA";
+import { MessageCircle } from "lucide-react";
+import { QrModal, useQrModal } from "./QrModal";
 
 function FloatingOrb({
   className,
@@ -29,6 +30,8 @@ function FloatingOrb({
 }
 
 export function Hero() {
+  const qr = useQrModal();
+
   return (
     <section className="relative overflow-hidden bg-gray-950 px-6 py-12 md:py-16">
       {/* Gradient mesh background */}
@@ -50,8 +53,8 @@ export function Hero() {
       <FloatingOrb className="right-[15%] top-[60%] h-56 w-56 bg-brand-400" delay={2} />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          {/* Left: Text + CTA */}
+        <div className="grid items-center gap-8 md:grid-cols-[5fr_7fr]">
+          {/* Left: Text + CTA button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,18 +101,26 @@ export function Hero() {
               ))}
             </div>
 
-            {/* WeChat CTA */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 inline-flex items-center gap-5 rounded-2xl border border-gray-700/50 bg-gray-800/60 p-4 backdrop-blur-sm"
+              className="mt-8 flex items-center gap-4"
             >
-              <WechatCTA className="[&_p]:text-gray-400" />
+              <button
+                onClick={qr.show}
+                className="group flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-400 hover:shadow-brand-400/30"
+              >
+                <MessageCircle size={18} />
+                加入卖家群
+                <span className="transition-transform group-hover:translate-x-0.5">→</span>
+              </button>
+              <span className="text-sm text-gray-500">免费使用</span>
             </motion.div>
           </motion.div>
 
-          {/* Right: Product screenshot */}
+          {/* Right: Product screenshot (larger) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,6 +142,9 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* QR Modal */}
+      <QrModal open={qr.open} onClose={qr.hide} />
     </section>
   );
 }

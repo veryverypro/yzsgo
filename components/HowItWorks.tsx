@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScanLine, UserPlus, MessageCircle } from "lucide-react";
-import { WechatCTA } from "./WechatCTA";
+import { QrModal, useQrModal } from "./QrModal";
 
 const steps = [
   {
@@ -26,6 +26,8 @@ const steps = [
 ];
 
 export function HowItWorks() {
+  const qr = useQrModal();
+
   return (
     <section className="bg-gray-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
@@ -67,9 +69,16 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <WechatCTA />
+          <button
+            onClick={qr.show}
+            className="rounded-full bg-brand-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-400"
+          >
+            立即扫码加入 →
+          </button>
         </div>
       </div>
+
+      <QrModal open={qr.open} onClose={qr.hide} />
     </section>
   );
 }
