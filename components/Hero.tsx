@@ -85,7 +85,7 @@ export function Hero() {
             <p className="mt-4 max-w-md text-base leading-relaxed text-gray-400 md:text-lg">
               从选品到上架，从达人建联到广告投放
               <br />
-              告诉 AI 你想卖什么，剩下的交给鸭嘴售
+              告诉 AI 你的决定，剩下的交给鸭嘴售
             </p>
 
             {/* Platform badges */}
