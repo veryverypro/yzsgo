@@ -11,7 +11,7 @@ export function WechatCTA({ size = "sm", className = "" }: WechatCTAProps) {
   return (
     <div className={`flex flex-col items-center gap-3 ${className}`}>
       <Image
-        src="/images/wechat-qr-placeholder.svg"
+        src="/images/wechat-qr.png"
         alt="扫码加入鸭嘴售卖家群"
         width={imgSize}
         height={imgSize}
