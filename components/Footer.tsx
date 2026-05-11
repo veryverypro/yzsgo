@@ -36,20 +36,20 @@ function FaqAccordion({ faq }: { faq: FaqItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-gray-700">
       <button
         className="flex w-full items-center justify-between py-4 text-left"
         onClick={() => setOpen(!open)}
       >
-        <span className="font-medium text-gray-900">{faq.question}</span>
+        <span className="font-medium text-gray-100">{faq.question}</span>
         <ChevronDown
-          className={`h-5 w-5 flex-shrink-0 text-gray-400 transition-transform ${
+          className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform ${
             open ? "rotate-180" : ""
           }`}
         />
       </button>
       {open && (
-        <p className="pb-4 leading-relaxed text-gray-500">{faq.answer}</p>
+        <p className="pb-4 leading-relaxed text-gray-400">{faq.answer}</p>
       )}
     </div>
   );
