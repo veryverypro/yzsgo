@@ -116,7 +116,7 @@ export function Hero() {
                 加入卖家群
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </button>
-              <span className="text-sm text-gray-500">免费使用</span>
+              <span className="text-sm text-gray-500">免费试用</span>
             </motion.div>
           </motion.div>
 
