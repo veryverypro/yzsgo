@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -15,7 +16,8 @@ export function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-bold text-brand-600">
+        <a href="#" className="flex items-center gap-2 text-xl font-bold text-brand-600">
+          <Image src="/images/logo.png" alt="鸭嘴售" width={32} height={32} />
           鸭嘴售
         </a>
 
