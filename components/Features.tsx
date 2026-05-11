@@ -2,17 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Search,
-  PackagePlus,
-  MessageSquare,
-  Video,
-  TrendingUp,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
 interface Feature {
-  icon: LucideIcon;
   title: string;
   description: string;
   details: string[];
@@ -21,7 +12,6 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: Search,
     title: "AI 选品分析",
     description:
       "市场趋势、竞品评论、关键词提取、热卖品监控，告诉你\u201c卖什么能赚\u201d",
@@ -33,7 +23,6 @@ const features: Feature[] = [
     image: "/images/feature-selection.png",
   },
   {
-    icon: PackagePlus,
     title: "AI 上架",
     description:
       "采集\u2192AI 生成商品图\u2192多语言 Listing\u2192多店铺发布，晚上跑完早上验收",
@@ -45,7 +34,6 @@ const features: Feature[] = [
     image: "/images/feature-listing.png",
   },
   {
-    icon: MessageSquare,
     title: "达人建联",
     description: "批量邀约、自动回复、样品跟踪，达人合作全流程 AI 搞定",
     details: [
@@ -56,7 +44,6 @@ const features: Feature[] = [
     image: "/images/feature-influencer.png",
   },
   {
-    icon: Video,
     title: "AI 视频生成 & 剪辑",
     description: "从商品图一键生成推广视频，或上传素材 AI 自动剪辑成片",
     details: [
@@ -67,7 +54,6 @@ const features: Feature[] = [
     image: "/images/feature-video.png",
   },
   {
-    icon: TrendingUp,
     title: "广告投放助手",
     description: "智能建议出价、自动排除低效素材、投放数据一目了然",
     details: [
@@ -130,10 +116,7 @@ export function Features() {
 
                 {/* Text */}
                 <div className={isReversed ? "[direction:ltr]" : ""}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50">
-                    <feature.icon className="h-6 w-6 text-brand-500" />
-                  </div>
-                  <h3 className="mt-5 text-2xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900">
                     {feature.title}
                   </h3>
                   <p className="mt-3 text-base leading-relaxed text-gray-500">
