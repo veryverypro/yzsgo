@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import { QrModal, useQrModal } from "./QrModal";
 
 const navLinks = [
-  { label: "功能", href: "#features" },
-  { label: "案例", href: "#cases" },
-  { label: "定价", href: "#pricing" },
+  { label: "功能", href: "/#features" },
+  { label: "案例", href: "/#cases" },
+  { label: "定价", href: "/#pricing" },
   { label: "博客", href: "/blog" },
 ];
 
